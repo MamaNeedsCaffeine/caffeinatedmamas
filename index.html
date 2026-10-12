@@ -1,0 +1,98 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}</style>
+<title>The Caffeinated Mamas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one centered link-in-bio column; round logo up top, big pill buttons stacked below. */
+:root {
+  --bg: #fff3f8;
+  --surface: #ffffff;
+  --ink: #1d1218;
+  --muted: #6b5560;
+  --pink: #e4287c;
+  --pink-deep: #b8135f;
+  --on-pink: #ffffff;
+  --line: #f4c6da;
+  --font-display: 'Lobster', 'Brush Script MT', cursive;
+  --font-body: 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a0f16; --surface: #2a1824; --ink: #fdeef5; --muted: #c9a9b9;
+    --pink: #ff5aa0; --pink-deep: #ff86b9; --on-pink: #2a0716; --line: #4a2a3d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a0f16; --surface: #2a1824; --ink: #fdeef5; --muted: #c9a9b9;
+  --pink: #ff5aa0; --pink-deep: #ff86b9; --on-pink: #2a0716; --line: #4a2a3d;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); }
+.wrap { max-width: 520px; margin: 0 auto; padding-inline: 16px; padding-block: 32px 40px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.logo { width: min(280px, 72vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 10px 30px color-mix(in srgb, var(--pink) 30%, transparent); }
+h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 8vw, 2.6rem); color: var(--pink); text-align: center; text-wrap: balance; }
+.tag { margin: -18px 0 0; color: var(--muted); font-weight: 600; text-align: center; text-wrap: balance; }
+.links { width: 100%; display: flex; flex-direction: column; gap: 14px; }
+.link { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 16px 22px; border-radius: 999px; background: var(--pink); color: var(--on-pink); text-decoration: none; text-align: center; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 0 var(--pink-deep); transition: transform .12s ease, box-shadow .12s ease; }
+.link small { font-weight: 600; font-size: .85rem; opacity: .92; }
+.link:hover { transform: translateY(2px); box-shadow: 0 2px 0 var(--pink-deep); }
+.link:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.link.alt { background: var(--surface); color: var(--ink); border: 2px solid var(--pink); box-shadow: 0 4px 0 var(--line); }
+.group { width: 100%; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.group h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; color: var(--pink); text-align: center; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.chip { min-width: 0; padding: 10px 16px; border-radius: 999px; background: var(--surface); border: 2px solid var(--line); color: var(--ink); font-weight: 700; font-size: .95rem; text-decoration: none; overflow-wrap: anywhere; text-align: center; }
+.chip:hover { border-color: var(--pink); }
+.chip:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.note { margin: 0; max-width: 44ch; padding: 14px 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); font-size: .85rem; line-height: 1.5; text-align: center; }
+footer { color: var(--muted); font-size: .8rem; text-align: center; }
+@media (prefers-reduced-motion: reduce) { .link { transition: none; } }
+.wrap { position: relative; z-index: 1; }
+body::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .22; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='3'%3E%3C%21-- iced coffee --%3E%3Cg transform='translate(18 22) rotate(-10 30 50)'%3E%3Cpath d='M44 -6 L38 26' stroke='%23e4287c'/%3E%3Cpath d='M6 28 Q30 4 54 28 Z' fill='%23fbd3e4' stroke='%23e4287c'/%3E%3Cpath d='M4 28 H56 L50 92 Q30 98 10 92 Z' fill='%238a5a3c' stroke='%234a2a1a'/%3E%3Cpath d='M10 50 H51' stroke='%23d9b08c'/%3E%3Crect x='17' y='60' width='11' height='11' rx='2' fill='%23f3e3d3' stroke='none'/%3E%3Crect x='32' y='70' width='11' height='11' rx='2' fill='%23f3e3d3' stroke='none'/%3E%3C/g%3E%3C%21-- hot coffee --%3E%3Cg transform='translate(150 20) rotate(8 30 50)'%3E%3Cpath d='M6 12 H54 L50 22 H10 Z' fill='%23ffffff' stroke='%234a2a1a'/%3E%3Cpath d='M10 22 H50 L44 92 H16 Z' fill='%23ffffff' stroke='%234a2a1a'/%3E%3Cpath d='M13 44 H47 L45 66 H15 Z' fill='%23e4287c' stroke='%23b8135f'/%3E%3Cpath d='M30 -2 Q24 -10 30 -16 M40 0 Q34 -8 40 -14' stroke='%23b8135f'/%3E%3C/g%3E%3C%21-- cola cup --%3E%3Cg transform='translate(92 142) rotate(6 30 50)'%3E%3Cpath d='M44 -10 L36 24' stroke='%23d7263d'/%3E%3Cpath d='M6 28 Q30 6 54 28 Z' fill='%23ffe3e6' stroke='%23d7263d'/%3E%3Cpath d='M4 28 H56 L50 92 Q30 98 10 92 Z' fill='%23b3202f' stroke='%236e0f1a'/%3E%3Ccircle cx='20' cy='56' r='4' fill='%23ffd1d6' stroke='none'/%3E%3Ccircle cx='38' cy='68' r='5' fill='%23ffd1d6' stroke='none'/%3E%3Ccircle cx='28' cy='80' r='3' fill='%23ffd1d6' stroke='none'/%3E%3C/g%3E%3Cpath d='M14 200 l6 -6 m-6 0 l6 6' stroke='%23e4287c'/%3E%3Cpath d='M222 140 l7 -7 m-7 0 l7 7' stroke='%23e4287c'/%3E%3C/g%3E%3C/svg%3E"); background-size: 220px 220px; }
+:root[data-theme="dark"] body::before { opacity: .3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { opacity: .3; } }
+</style>
+<main class="wrap">
+  <img class="logo" src="logo.jpg" alt="The Caffeinated Mamas logo: two smiling drink cups wearing head straps with phones, one with glasses and a leopard bandana, one a cherry cola">
+  <h1>The Caffeinated Mamas</h1>
+  <p class="tag">Everyday life, side income, and a lot of coffee.</p>
+
+  <nav class="links" aria-label="Main links">
+    <a class="link" href="https://www.amazon.com/hz/wishlist/ls/NTE2JGY1H4DC?&amp;linkCode=ll2&amp;tag=caffeinate007-20&amp;linkId=b43660dab47ea68f34028bfe767bb10b&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener">Shop My Head Strap</a>
+    <a class="link" href="https://www.amazon.com/shop/adventuresthrumotherhood" target="_blank" rel="noopener">Tasking Distractions for Kids<small>Amazon storefront picks</small></a>
+    <a class="link alt" href="https://mamaneedscaffeine.github.io/free-guide/" target="_blank" rel="noopener">Free Guide For Training AI<small>Start here if you are new</small></a>
+    <a class="link alt" href="https://mamaneedscaffeine.github.io/playbook.html" target="_blank" rel="noopener">Get the Amelia Playbook<small>The full step-by-step guide</small></a>
+    <a class="link alt" href="https://www.ameliachores.com/r/JAMI9K2DNTDY" target="_blank" rel="noopener">Amelia Residential Tasks<small>Get paid for chores you already do at home</small></a>
+    <a class="link alt" href="https://ameliarobotics.com/amelia/referrals/invite/bcf6612f-5311-49c9-bede-e82e0bfeffa1" target="_blank" rel="noopener">Amelia for Business<small>I own a business</small></a>
+    <a class="link alt" href="https://af.uppromote.com/zef9bq-ih/register" target="_blank" rel="noopener">Become an Affiliate<small>Earn by sharing the guides</small></a>
+    <a class="link alt" href="https://www.tiktok.com/@vikaking.me" target="_blank" rel="noopener">¿Hablas Español?<small>Victoria te ayuda en TikTok: @vikaking.me</small></a>
+  </nav>
+
+  <section class="group" aria-labelledby="tt">
+    <h2 id="tt">Follow on TikTok</h2>
+    <div class="chips">
+      <a class="chip" href="https://www.tiktok.com/@mamaneedscaffeine1" target="_blank" rel="noopener">@mamaneedscaffeine1</a>
+      <a class="chip" href="https://www.tiktok.com/@caffeinatedhustles" target="_blank" rel="noopener">@caffeinatedhustles</a>
+      <a class="chip" href="https://www.tiktok.com/@caffeinemeetschaos" target="_blank" rel="noopener">@caffeinemeetschaos</a>
+      <a class="chip" href="https://www.tiktok.com/@choresthatpay" target="_blank" rel="noopener">@choresthatpay</a>
+      <a class="chip" href="https://www.tiktok.com/@vikaking.me" target="_blank" rel="noopener">@vikaking.me</a>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="fb">
+    <h2 id="fb">Join the Facebook Groups</h2>
+    <div class="chips">
+      <a class="chip" href="https://www.facebook.com/groups/1410020214595066/" target="_blank" rel="noopener">The Caffeinated Hustle</a>
+      <a class="chip" href="https://www.facebook.com/share/g/19RxM6nWpV/" target="_blank" rel="noopener">L&amp;J Group</a>
+      <a class="chip" href="https://www.facebook.com/profile.php?id=61594440024129" target="_blank" rel="noopener">Amelia Robotics - Chores That Pay</a>
+    </div>
+  </section>
+
+  <p class="note">This page contains referral and affiliate links. If you sign up or buy through them, I may earn a small commission or bonus at no extra cost to you. Pay rates and program terms can change, so check each app for current details.</p>
+  <footer>&copy; The Caffeinated Mamas</footer>
+</main>
