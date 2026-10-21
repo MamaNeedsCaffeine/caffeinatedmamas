@@ -50,6 +50,15 @@ h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: c
 .chip:hover { border-color: var(--pink); }
 .chip:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .note { margin: 0; max-width: 44ch; padding: 14px 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); font-size: .85rem; line-height: 1.5; text-align: center; }
+.bundle { width: 100%; background: var(--surface); border: 2px solid var(--pink); border-radius: 24px; padding: 18px; display: flex; flex-direction: column; gap: 12px; text-align: center; box-shadow: 0 4px 0 var(--line); }
+.bundle img { width: 100%; height: auto; border-radius: 16px; display: block; }
+.bundle .badge { align-self: center; padding: 4px 14px; border-radius: 999px; background: var(--pink); color: var(--on-pink); font-weight: 700; font-size: .8rem; }
+.bundle h3 { margin: 0; font-size: 1.15rem; color: var(--ink); }
+.bundle .price { margin: 0; font-family: var(--font-display); font-size: 2.2rem; color: var(--pink); line-height: 1; }
+.bundle ul { margin: 0; padding: 0 0 0 1.1em; text-align: left; color: var(--muted); font-weight: 600; font-size: .9rem; line-height: 1.5; }
+.bundle ul li + li { margin-top: 6px; }
+.bundle ul strong { color: var(--ink); }
+.bundle .after { margin: 0; text-align: left; color: var(--muted); font-size: .85rem; line-height: 1.5; }
 footer { color: var(--muted); font-size: .8rem; text-align: center; }
 @media (prefers-reduced-motion: reduce) { .link { transition: none; } }
 .wrap { position: relative; z-index: 1; }
@@ -72,6 +81,27 @@ body::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-event
     <a class="link alt" href="https://af.uppromote.com/zef9bq-ih/register" target="_blank" rel="noopener">Become an Affiliate<small>Earn by sharing the guides</small></a>
     <a class="link alt" href="https://www.tiktok.com/@vikaking.me" target="_blank" rel="noopener">¿Hablas Español?<small>Victoria te ayuda en TikTok: @vikaking.me</small></a>
   </nav>
+
+  <section class="group" aria-labelledby="help">
+    <h2 id="help">1-on-1 Help</h2>
+    <div class="bundle">
+      <span class="badge">Best Value Bundle</span>
+      <img src="https://cdn.shopify.com/s/files/1/1002/6323/1779/files/Amelia_chores_that_pay_0a6f70e0-307a-493e-a31a-1e8fb2b9ea78.png?v=1792594000" alt="Amelia: The Playbook — Tasks that pay" loading="lazy">
+      <h3>AI Training Playbook + 1-on-1 Session (30 Minutes)</h3>
+      <p class="price">$125</p>
+      <ul>
+        <li><strong>The AI Training Playbook</strong> — your complete step-by-step guide to the Amelia app: recording, task rules, pay &amp; referrals, and how to maximize your earnings</li>
+        <li><strong>A 30-minute 1-on-1 session</strong> — app rundown, a personalized breakdown of your home and routine, ideas for turning your chores into tasking opportunities, a tasking strategy that fits your schedule, and Q&amp;A for your specific questions</li>
+      </ul>
+      <p class="after"><strong>After you pay:</strong> you'll get access to the playbook, and your order confirmation email will include a link to our 1-on-1 questionnaire. Tell us what you need help with, your time zone, and several dates/times that work for you. Lauren or Jamie will contact you to arrange a time.</p>
+      <a class="link" href="https://zef9bq-ih.myshopify.com/cart/55795128860963:1" target="_blank" rel="noopener">Get the Bundle — $125</a>
+    </div>
+    <div class="links">
+      <a class="link alt" href="https://zef9bq-ih.myshopify.com/cart/55715166224675:1" target="_blank" rel="noopener">30-Minute Tasking Session — $40<small>Personalized home &amp; routine breakdown, tasking strategy, app rundown, Q&amp;A</small></a>
+      <a class="link alt" href="https://zef9bq-ih.myshopify.com/cart/55715166454051:1" target="_blank" rel="noopener">60-Minute Tasking + Referral Growth — $60<small>Everything in 30 minutes, plus referral &amp; social media strategy</small></a>
+    </div>
+    <p class="note">Requested dates and times are not automatically confirmed. We will contact you after reviewing your questionnaire to finalize your session time. Sessions are for guidance and support only; we can't guarantee earnings, referrals, hours, task approvals, social media growth, or other results. We are independent creators and users, not Amelia employees or official Amelia support.</p>
+  </section>
 
   <section class="group" aria-labelledby="tt">
     <h2 id="tt">Follow on TikTok</h2>
