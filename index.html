@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>body{margin:0}</style>
+<style>body{margin:0}*,*::before,*::after{box-sizing:border-box}</style>
 <title>The Caffeinated Mamas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,8 +33,8 @@
   color-scheme: dark;
 }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); }
-.wrap { max-width: 520px; margin: 0 auto; padding-inline: 16px; padding-block: 32px 40px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-.logo { width: min(280px, 72vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 10px 30px color-mix(in srgb, var(--pink) 30%, transparent); }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 16px; padding-block: 32px 40px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.logo { width: min(240px, 60vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 10px 30px color-mix(in srgb, var(--pink) 30%, transparent); }
 h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 8vw, 2.6rem); color: var(--pink); text-align: center; text-wrap: balance; }
 .tag { margin: -18px 0 0; color: var(--muted); font-weight: 600; text-align: center; text-wrap: balance; }
 .links { width: 100%; display: flex; flex-direction: column; gap: 14px; }
@@ -59,6 +59,22 @@ h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: c
 .bundle ul li + li { margin-top: 6px; }
 .bundle ul strong { color: var(--ink); }
 .bundle .after { margin: 0; text-align: left; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+.box { width: 100%; background: color-mix(in srgb, var(--surface) 88%, transparent); border: 2px solid var(--line); border-radius: 28px; padding: 22px 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+.box h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 1.8rem; color: var(--pink); text-align: center; }
+.box h3 { margin: 6px 0 0; font-size: 1rem; text-align: center; color: var(--ink); }
+.box .note { max-width: none; }
+.tiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.tile { flex: 0 0 calc((100% - 28px) / 3); display: flex; flex-direction: column; min-width: 0; background: var(--surface); border: 2px solid var(--line); border-radius: 20px; overflow: hidden; text-decoration: none; color: var(--ink); box-shadow: 0 4px 0 var(--line); transition: transform .12s ease, border-color .12s ease; }
+.tile:hover { transform: translateY(-3px); border-color: var(--pink); }
+.tile:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.tile img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: top; display: block; background: #fde3ee; }
+.tile-body { display: flex; flex-direction: column; gap: 4px; padding: 12px 12px 16px; text-align: center; flex: 1; justify-content: center; }
+.tile-title { font-weight: 700; font-size: 1.05rem; line-height: 1.2; }
+.tile-sub { font-weight: 600; font-size: .82rem; color: var(--muted); line-height: 1.35; }
+.tile-featured { border-color: var(--pink); box-shadow: 0 4px 0 var(--pink-deep); }
+.tile-featured .tile-title { color: var(--pink-deep); }
+@media (max-width: 600px) { .box { padding: 18px 10px 20px; } .tiles { gap: 8px; } .tile { flex-basis: calc((100% - 16px) / 3); border-radius: 14px; } .tile-body { padding: 8px 6px 10px; } .tile-title { font-size: .8rem; } .tile-sub { display: none; } }
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
 footer { color: var(--muted); font-size: .8rem; text-align: center; }
 @media (prefers-reduced-motion: reduce) { .link { transition: none; } }
 .wrap { position: relative; z-index: 1; }
@@ -71,56 +87,53 @@ body::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-event
   <h1>The Caffeinated Mamas</h1>
   <p class="tag">Everyday life, side income, and a lot of coffee.</p>
 
-  <nav class="links" aria-label="Main links">
-    <a class="link" href="https://www.amazon.com/hz/wishlist/ls/NTE2JGY1H4DC?&amp;linkCode=ll2&amp;tag=caffeinate007-20&amp;linkId=b43660dab47ea68f34028bfe767bb10b&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener">Shop My Head Strap</a>
-    <a class="link" href="https://www.amazon.com/shop/adventuresthrumotherhood" target="_blank" rel="noopener">Tasking Distractions for Kids<small>Amazon storefront picks</small></a>
-    <a class="link alt" href="https://mamaneedscaffeine.github.io/free-guide/" target="_blank" rel="noopener">Free Guide For Training AI<small>Start here if you are new</small></a>
-    <a class="link alt" href="https://mamaneedscaffeine.github.io/playbook.html" target="_blank" rel="noopener">Get the Amelia Playbook<small>The full step-by-step guide</small></a>
-    <a class="link alt" href="https://www.ameliachores.com/r/JAMI9K2DNTDY" target="_blank" rel="noopener">Amelia Residential Tasks<small>Get paid for chores you already do at home</small></a>
-    <a class="link alt" href="https://ameliarobotics.com/amelia/referrals/invite/bcf6612f-5311-49c9-bede-e82e0bfeffa1" target="_blank" rel="noopener">Amelia for Business<small>I own a business</small></a>
-    <a class="link alt" href="https://af.uppromote.com/zef9bq-ih/register" target="_blank" rel="noopener">Become an Affiliate<small>Earn by sharing the guides</small></a>
-    <a class="link alt" href="https://www.tiktok.com/@vikaking.me" target="_blank" rel="noopener">¿Hablas Español?<small>Victoria te ayuda en TikTok: @vikaking.me</small></a>
-  </nav>
-
-  <section class="group" aria-labelledby="help">
-    <h2 id="help">1-on-1 Help</h2>
-    <div class="bundle">
-      <span class="badge">Best Value Bundle</span>
-      <img src="https://cdn.shopify.com/s/files/1/1002/6323/1779/files/Amelia_chores_that_pay_0a6f70e0-307a-493e-a31a-1e8fb2b9ea78.png?v=1792594000" alt="Amelia: The Playbook — Tasks that pay" loading="lazy">
-      <h3>AI Training Playbook + 1-on-1 Session (30 Minutes)</h3>
-      <p class="price">$125</p>
-      <ul>
-        <li><strong>The AI Training Playbook</strong> — your complete step-by-step guide to the Amelia app: recording, task rules, pay &amp; referrals, and how to maximize your earnings</li>
-        <li><strong>A 30-minute 1-on-1 session</strong> — app rundown, a personalized breakdown of your home and routine, ideas for turning your chores into tasking opportunities, a tasking strategy that fits your schedule, and Q&amp;A for your specific questions</li>
-      </ul>
-      <p class="after"><strong>After you pay:</strong> you'll get access to the playbook, and your order confirmation email will include a link to our 1-on-1 questionnaire. Tell us what you need help with, your time zone, and several dates/times that work for you. Lauren or Jamie will contact you to arrange a time.</p>
-      <a class="link" href="https://zef9bq-ih.myshopify.com/cart/55795128860963:1" target="_blank" rel="noopener">Get the Bundle — $125</a>
-    </div>
-    <div class="links">
-      <a class="link alt" href="https://zef9bq-ih.myshopify.com/cart/55715166224675:1" target="_blank" rel="noopener">30-Minute Tasking Session — $40<small>Personalized home &amp; routine breakdown, tasking strategy, app rundown, Q&amp;A</small></a>
-      <a class="link alt" href="https://zef9bq-ih.myshopify.com/cart/55715166454051:1" target="_blank" rel="noopener">60-Minute Tasking + Referral Growth — $60<small>Everything in 30 minutes, plus referral &amp; social media strategy</small></a>
-    </div>
-    <p class="note">Requested dates and times are not automatically confirmed. We will contact you after reviewing your questionnaire to finalize your session time. Sessions are for guidance and support only; we can't guarantee earnings, referrals, hours, task approvals, social media growth, or other results. We are independent creators and users, not Amelia employees or official Amelia support.</p>
+  <section class="box" aria-labelledby="signup">
+    <h2 id="signup"><span aria-hidden="true">📝</span> Sign Up</h2>
+      <div class="tiles">
+        <a class="tile" href="https://www.ameliachores.com/r/JAMI9K2DNTDY" target="_blank" rel="noopener"><img src="https://mamaneedscaffeine.github.io/free-guide/11-residential-tasks.jpg" alt="Residential task list" loading="lazy"><span class="tile-body"><span class="tile-title">Amelia Residential Tasks</span><span class="tile-sub">Get paid for chores you already do at home</span></span></a>
+        <a class="tile" href="https://ameliarobotics.com/amelia/referrals/invite/bcf6612f-5311-49c9-bede-e82e0bfeffa1" target="_blank" rel="noopener"><img src="https://mamaneedscaffeine.github.io/free-guide/13-own-a-business.jpg" alt="Own your own business poster" loading="lazy"><span class="tile-body"><span class="tile-title">Amelia for Business</span><span class="tile-sub">I own a business</span></span></a>
+      </div>
   </section>
 
-  <section class="group" aria-labelledby="tt">
-    <h2 id="tt">Follow on TikTok</h2>
-    <div class="chips">
-      <a class="chip" href="https://www.tiktok.com/@mamaneedscaffeine1" target="_blank" rel="noopener">@mamaneedscaffeine1</a>
-      <a class="chip" href="https://www.tiktok.com/@caffeinatedhustles" target="_blank" rel="noopener">@caffeinatedhustles</a>
-      <a class="chip" href="https://www.tiktok.com/@caffeinemeetschaos" target="_blank" rel="noopener">@caffeinemeetschaos</a>
-      <a class="chip" href="https://www.tiktok.com/@choresthatpay" target="_blank" rel="noopener">@choresthatpay</a>
-      <a class="chip" href="https://www.tiktok.com/@vikaking.me" target="_blank" rel="noopener">@vikaking.me</a>
-    </div>
+  <section class="box" aria-labelledby="guides">
+    <h2 id="guides"><span aria-hidden="true">📚</span> Helpful Guides</h2>
+      <div class="tiles">
+        <a class="tile" href="https://mamaneedscaffeine.github.io/playbook.html" target="_blank" rel="noopener"><img src="https://cdn.shopify.com/s/files/1/1002/6323/1779/files/Training_AI_main_page.png?v=1792001838" alt="AI Training Playbook cover" loading="lazy"><span class="tile-body"><span class="tile-title">The Amelia Playbook</span><span class="tile-sub">The full step-by-step guide</span></span></a>
+        <a class="tile" href="https://mamaneedscaffeine.github.io/free-guide/" target="_blank" rel="noopener"><img src="https://mamaneedscaffeine.github.io/free-guide/01-cover.jpg" alt="Free Amelia guide cover with Bean and Pop" loading="lazy"><span class="tile-body"><span class="tile-title">Free Guide For Training AI</span><span class="tile-sub">Start here if you are new</span></span></a>
+        <a class="tile" href="https://af.uppromote.com/zef9bq-ih/register" target="_blank" rel="noopener"><img src="https://mamaneedscaffeine.github.io/free-guide/15-referrals.jpg" alt="Share and earn poster" loading="lazy"><span class="tile-body"><span class="tile-title">Become an Affiliate</span><span class="tile-sub">Earn by sharing the guides</span></span></a>
+      </div>
   </section>
 
-  <section class="group" aria-labelledby="fb">
-    <h2 id="fb">Join the Facebook Groups</h2>
-    <div class="chips">
-      <a class="chip" href="https://www.facebook.com/groups/1410020214595066/" target="_blank" rel="noopener">The Caffeinated Hustle</a>
-      <a class="chip" href="https://www.facebook.com/share/g/19RxM6nWpV/" target="_blank" rel="noopener">L&amp;J Group</a>
-      <a class="chip" href="https://www.facebook.com/profile.php?id=61594440024129" target="_blank" rel="noopener">Amelia Robotics - Chores That Pay</a>
-    </div>
+  <section class="box" aria-labelledby="help">
+    <h2 id="help"><span aria-hidden="true">🤝</span> Help</h2>
+      <div class="tiles">
+        <a class="tile tile-featured" href="https://zef9bq-ih.myshopify.com/cart/55795128860963:1" target="_blank" rel="noopener"><img src="https://cdn.shopify.com/s/files/1/1002/6323/1779/files/Amelia_chores_that_pay_0a6f70e0-307a-493e-a31a-1e8fb2b9ea78.png?v=1792594000" alt="Amelia: The Playbook — Tasks that pay" loading="lazy"><span class="tile-body"><span class="tile-title">Playbook + 30-Min Session — $125</span><span class="tile-sub">Best value: the full playbook plus a personalized 30-minute session</span></span></a>
+        <a class="tile" href="https://zef9bq-ih.myshopify.com/cart/55715166224675:1" target="_blank" rel="noopener"><img src="https://cdn.shopify.com/s/files/1/1002/6323/1779/files/30min_beginner_2.png?v=1792299745" alt="30-minute beginner session" loading="lazy"><span class="tile-body"><span class="tile-title">30-Minute Session — $40</span><span class="tile-sub">Home &amp; routine breakdown, tasking strategy, app rundown, Q&amp;A</span></span></a>
+        <a class="tile" href="https://zef9bq-ih.myshopify.com/cart/55715166454051:1" target="_blank" rel="noopener"><img src="https://cdn.shopify.com/s/files/1/1002/6323/1779/files/60min_session.png?v=1792300021" alt="60-minute personalized session" loading="lazy"><span class="tile-body"><span class="tile-title">60-Minute Session — $60</span><span class="tile-sub">Everything in 30 min + referral &amp; social media strategy</span></span></a>
+      </div>
+      <p class="note"><strong>After you pay:</strong> your order confirmation email will include a link to our 1-on-1 questionnaire (bundle buyers also get the playbook). Tell us what you need help with, your time zone, and several dates/times that work for you. Lauren or Jamie will contact you to arrange a time. Requested times are not automatically confirmed. Sessions are for guidance and support only; we can't guarantee earnings, referrals, hours, task approvals, social media growth, or other results. We are independent creators and users, not Amelia employees or official Amelia support.</p>
+      <h3>Follow on TikTok</h3>
+      <div class="chips">
+        <a class="chip" href="https://www.tiktok.com/@mamaneedscaffeine1" target="_blank" rel="noopener">@mamaneedscaffeine1</a>
+        <a class="chip" href="https://www.tiktok.com/@caffeinatedhustles" target="_blank" rel="noopener">@caffeinatedhustles</a>
+        <a class="chip" href="https://www.tiktok.com/@caffeinemeetschaos" target="_blank" rel="noopener">@caffeinemeetschaos</a>
+        <a class="chip" href="https://www.tiktok.com/@choresthatpay" target="_blank" rel="noopener">@choresthatpay</a>
+        <a class="chip" href="https://www.tiktok.com/@vikaking.me" target="_blank" rel="noopener">@vikaking.me · ¿Hablas Español?</a>
+      </div>
+      <h3>Join the Facebook Groups</h3>
+      <div class="chips">
+        <a class="chip" href="https://www.facebook.com/groups/1410020214595066/" target="_blank" rel="noopener">The Caffeinated Hustle</a>
+        <a class="chip" href="https://www.facebook.com/share/g/19RxM6nWpV/" target="_blank" rel="noopener">L&amp;J Group</a>
+        <a class="chip" href="https://www.facebook.com/profile.php?id=61594440024129" target="_blank" rel="noopener">Amelia Robotics - Chores That Pay</a>
+      </div>
+  </section>
+
+  <section class="box" aria-labelledby="shop">
+    <h2 id="shop"><span aria-hidden="true">🛍️</span> Shop</h2>
+      <div class="tiles">
+        <a class="tile" href="https://www.amazon.com/hz/wishlist/ls/NTE2JGY1H4DC?&amp;linkCode=ll2&amp;tag=caffeinate007-20&amp;linkId=b43660dab47ea68f34028bfe767bb10b&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener"><img src="https://mamaneedscaffeine.github.io/free-guide/05-head-straps.jpg" alt="Head strap guide" loading="lazy"><span class="tile-body"><span class="tile-title">Shop My Head Strap</span><span class="tile-sub">The strap we use for tasking</span></span></a>
+        <a class="tile" href="https://www.amazon.com/shop/adventuresthrumotherhood" target="_blank" rel="noopener"><img src="https://mamaneedscaffeine.github.io/coloring-books.png" alt="Coloring books and kids activities" loading="lazy"><span class="tile-body"><span class="tile-title">Tasking Distractions for Kids</span><span class="tile-sub">Amazon storefront picks</span></span></a>
+      </div>
   </section>
 
   <p class="note">This page contains referral and affiliate links. If you sign up or buy through them, I may earn a small commission or bonus at no extra cost to you. Pay rates and program terms can change, so check each app for current details.</p>
